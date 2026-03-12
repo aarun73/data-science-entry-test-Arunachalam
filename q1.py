@@ -1,12 +1,27 @@
-def swap(x, y):
+def swap_if_numeric(x, y):
     """
-    Task 1
-    - Create a function that would swap the value of x and y using only x and y as variables.
-    - x and y must be numeric.
-    - Return -1 if x and y is not numeric, and
-    - print the swapped values if both x and y are numeric.
+    Swaps the values of x and y using only x and y as variables, 
+    if both are numeric (int or float).
+    
+    :param x: The first value.
+    :param y: The second value.
+    :return: -1 if either x or y is not numeric, otherwise None.
     """
-    return
+    # Check if both x and y are numeric (int or float)
+    if isinstance(x, (int, float)) and isinstance(y, (int, float)):
+        # Use arithmetic operations to swap without a temporary variable
+        # This approach works for numbers in Python because they have arbitrary precision
+        x = x + y
+        y = x - y
+        x = x - y
+        
+        # Print the swapped values as required
+        print(f"Swapped values: x = {x}, y = {y}")
+    else:
+        # Return "-1" if either is not numeric
+        return "-1"
+
+
 
 
 # Task 2
